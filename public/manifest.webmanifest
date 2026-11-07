@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Entilaaqa.com — انطلاقة",
+  "short_name": "Entilaaqa",
+  "description": "نبني لك شركة SaaS كاملة — We build your SaaS company end to end.",
+  "lang": "ar",
+  "dir": "auto",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "categories": ["business", "productivity"],
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

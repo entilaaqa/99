@@ -1,0 +1,23 @@
+# Render Blueprint — خدمة ويب Node + قاعدة PostgreSQL موجودة مسبقاً في حسابك.
+# لا نُنشئ قاعدة جديدة هنا: الصق رابط قاعدتك الحالية في DATABASE_URL.
+services:
+  - type: web
+    name: entilaaqa
+    runtime: node
+    plan: free
+    # ملاحظة: يجب أن تكون الخدمة في نفس Region مع قاعدة البيانات لاستخدام الرابط الداخلي.
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL   # Render → قاعدة البيانات → Connections → Internal Database URL
+        sync: false
+      - key: ADMIN_EMAIL    # بريد المدير الأول
+        sync: false
+      - key: ADMIN_PASSWORD # كلمة مرور المدير (10 أحرف على الأقل)
+        sync: false
